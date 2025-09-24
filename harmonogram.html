@@ -17,11 +17,6 @@
       background: url('6-IMG_0941.jpeg') center/cover no-repeat;
       color: white;
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
       position: relative;
     }
 
@@ -33,6 +28,80 @@
       z-index: 0;
     }
 
+    header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(20, 0, 28, 0.9);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 1rem;
+  min-height: 50px;
+  z-index: 1000;
+  flex-wrap: wrap;
+}
+
+    .logo img {
+  max-height: 40px;
+}
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-links a {
+      color: #e0aaff;
+      text-decoration: none;
+      margin: 0.5rem 1rem;
+      font-weight: bold;
+      transition: 0.3s;
+      font-size: 1rem;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 2rem;
+      color: #e0aaff;
+      cursor: pointer;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+      background-color: rgba(20, 0, 28, 0.95);
+    }
+
+    .mobile-nav.show {
+      display: flex;
+    }
+
+    .mobile-nav a {
+      color: #e0aaff;
+      text-decoration: none;
+      margin: 1rem 0;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    .header-shadow {
+      height: 30px;
+      width: 100%;
+      background: rgba(20, 0, 28, 0.9);
+      z-index: 999;
+      position: relative;
+    }
+
     .schedule-wrapper {
       position: relative;
       z-index: 1;
@@ -40,7 +109,7 @@
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       padding: 3rem 2rem;
-      margin: 2rem auto;
+      margin: 14rem auto 2rem;
       max-width: 640px;
       border-radius: 1.5rem;
       text-align: center;
@@ -55,7 +124,6 @@
       font-family: 'Clash Display', sans-serif;
       font-size: 2.5rem;
       color: #e0aaff;
-      text-align: center;
       margin-bottom: 2rem;
     }
 
@@ -94,29 +162,78 @@
       .module {
         font-size: 0.95rem;
       }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .logo img {
+        height: 80px;
+      }
+
+      .header-shadow {
+        height: 60px;
+      }
+
+      .schedule-wrapper {
+        margin-top: 13rem;
+      }
     }
   </style>
+  <script>
+    function toggleMenu() {
+      document.getElementById("mobileMenu").classList.toggle("show");
+    }
+  </script>
 </head>
 <body>
 
-  <div class="schedule-wrapper">
-    <h1>Harmonogram szkoleń</h1>
-
-    <div class="module">
-      Niedziela, 6 października – Moduł 1: Techniki dnia codziennego
-    </div>
-    <div class="module">
-      Niedziela, 13 października – Moduł 2: Formy klasyczne
-    </div>
-    <div class="module">
-      Niedziela, 20 października – Moduł 3: Nowoczesne strzyżenia
-    </div>
-    <div class="module">
-      Niedziela, 27 października – Moduł 4: Broda i golenie
-    </div>
-
-    <a class="back-button" href="index.html">← Powrót na stronę główną</a>
+<header>
+  <div class="logo">
+    <img src="POSTER 2 CUT v.png" alt="Eternal Logo">
   </div>
+
+  <nav class="nav-links">
+    <a href="index_eternal_inspired.html#start">Start</a>
+    <a href="index_eternal_inspired.html#o-nas">O szkoleniu</a>
+    <a href="harmonogram.html">Harmonogram</a>
+    <a href="kontakt.html">Kontakt</a>
+  </nav>
+
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+  <nav class="mobile-nav" id="mobileMenu">
+    <a href="index_eternal_inspired.html#start" onclick="toggleMenu()">Start</a>
+    <a href="index_eternal_inspired.html#o-nas" onclick="toggleMenu()">O szkoleniu</a>
+    <a href="harmonogram.html" onclick="toggleMenu()">Harmonogram</a>
+    <a href="kontakt.html" onclick="toggleMenu()">Kontakt</a>
+  </nav>
+</header>
+
+<div class="header-shadow"></div>
+
+<div class="schedule-wrapper">
+  <h1>Harmonogram szkoleń</h1>
+
+  <div class="module">
+    Niedziela, 6 października – Moduł 1: Techniki dnia codziennego
+  </div>
+  <div class="module">
+    Niedziela, 13 października – Moduł 2: Formy klasyczne
+  </div>
+  <div class="module">
+    Niedziela, 20 października – Moduł 3: Nowoczesne strzyżenia
+  </div>
+  <div class="module">
+    Niedziela, 27 października – Moduł 4: Broda i golenie
+  </div>
+
+  <a class="back-button" href="index_eternal_inspired.html">← Powrót na stronę główną</a>
+</div>
 
 </body>
 </html>
