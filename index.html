@@ -7,7 +7,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;700&family=Epilogue:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Epilogue', sans-serif; background: #14001c; color: white; }
+
+    body {
+      font-family: 'Epilogue', sans-serif;
+      background: #14001c;
+      color: white;
+    }
 
     header {
       position: fixed;
@@ -18,14 +23,14 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.5rem 1.5rem; /* MNIEJSZY margines */
+      padding: 0.4rem 1rem;
+      min-height: 50px;
       z-index: 1000;
       flex-wrap: wrap;
     }
 
     .logo img {
-      height: 80px;
-      transition: height 0.3s ease;
+      max-height: 40px;
     }
 
     .nav-links {
@@ -60,6 +65,7 @@
       flex-direction: column;
       width: 100%;
       text-align: center;
+      background-color: rgba(20, 0, 28, 0.95);
     }
 
     .mobile-nav.show {
@@ -80,7 +86,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 2rem;
+      padding: 7rem 2rem 2rem; /* UWAGA: tu zwiększony padding-top */
       position: relative;
     }
 
@@ -186,7 +192,7 @@
       }
 
       .logo img {
-        height: 60px;
+        height: 40px;
       }
 
       .hero-logo {
@@ -204,7 +210,7 @@
       }
 
       .hero {
-        padding-top: 4rem; /* mniej miejsca u góry */
+        padding-top: 7rem;
       }
     }
   </style>
