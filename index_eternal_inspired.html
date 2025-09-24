@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Szkolenia Eternal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;700&family=Epilogue:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Epilogue', sans-serif; background: #14001c; color: white; }
+
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(20, 0, 28, 0.9);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      z-index: 1000;
+    }
+
+    header img {
+      height: 40px;
+    }
+
+    nav a {
+      color: #e0aaff;
+      text-decoration: none;
+      margin-left: 2rem;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+    }
+
+    .hero {
+      height: 100vh;
+      background: url('6-IMG_0941.jpeg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      color: #fff;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      color: #e0d3ef;
+    }
+
+    .hero-content .buttons a {
+      background: #e0aaff;
+      color: #2e003e;
+      padding: 0.9rem 2rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      margin: 0 0.5rem;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .hero-content .buttons a:hover {
+      background: #ffb3ec;
+    }
+
+    section {
+      padding: 6rem 2rem 4rem;
+      text-align: center;
+    }
+
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: none;
+      border-radius: 0.5rem;
+    }
+
+    form button {
+      background: #e0aaff;
+      color: #2e003e;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 0.75rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    form button:hover {
+      background: #ffb3ec;
+    }
+
+    footer {
+      background: #2a003f;
+      color: #ccc;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
+
+    @media(max-width: 768px) {
+      header { flex-direction: column; align-items: flex-start; }
+      nav a { margin: 1rem 0; display: block; }
+      .hero-content h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header style="position: fixed; width: 100%; top: 0; left: 0; background: rgba(20, 0, 28, 0.9); display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 2rem; z-index: 1000; height: 100px;">
+  <div style="height: 100%; display: flex; align-items: center;">
+    <img src="POSTER 2 CUT v.png" alt="Eternal Logo" style="height: 120px; object-fit: contain;">
+  </div>
+  <nav style="display: flex; align-items: center;">
+    <a href="#start" style="color: #e0aaff; text-decoration: none; margin-left: 2rem; font-weight: bold;">Start</a>
+    <a href="#o-nas" style="color: #e0aaff; text-decoration: none; margin-left: 2rem; font-weight: bold;">O szkoleniu</a>
+    <a href="harmonogram.html" style="color: #e0aaff; text-decoration: none; margin-left: 2rem; font-weight: bold;">Harmonogram</a>
+    <a href="kontakt.html" style="color: #e0aaff; text-decoration: none; margin-left: 2rem; font-weight: bold;">Kontakt</a>
+  </nav>
+</header>
+
+<section class="hero" id="start">
+  <div class="hero-content">
+    <img src="poster_ai_brightened.png" alt="Logo Eternal Cut" style="width: 320px; margin-bottom: 20px;">
+    <h1>Szkolenia Eternal</h1>
+    <p>Rozwijaj się jako barber z najlepszymi – w centrum Poznania</p>
+    <div class="buttons">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSc9FrXhq5frUC2waSCEfkL6166--FTJcYEXy0mGR9Ay2DTuVQ/viewform" class="cta-button" target="_blank" rel="noopener noreferrer">
+        Zapisz się
+      </a>
+      <a href="harmonogram.html" class="cta-button">
+        Harmonogram
+      </a>
+      <a href="kontakt.html" class="cta-button">
+        Kontakt
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="o-nas" style="
+  position: relative;
+  background: url('4-DSC00455.png') center/cover no-repeat;
+  padding: 6rem 2rem 8rem;
+  text-align: center;
+  z-index: 1;
+  background-attachment: fixed;
+">
+
+  <div style="
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(20,0,28,0.95), rgba(20,0,28,0.7), rgba(20,0,28,0.95));
+    z-index: -1;
+  "></div>
+
+  <h2 style="margin-bottom: 2rem;">O szkoleniach i Eternal Cut</h2>
+  <p style="max-width: 600px; margin: 0 auto; font-size: 1.1rem; line-height: 1.8; color: #e0d3ef;">
+    Szkolenia Eternal to połączenie pasji, profesjonalizmu i atmosfery współpracy. Działamy w centrum Poznania, inspirując kolejne pokolenia barberów. 
+    <br><br>
+    Każdy uczestnik naszych szkoleń otrzymuje indywidualne podejście, praktyczne umiejętności oraz dostęp do wiedzy prowadzonej przez doświadczonych instruktorów. 
+    <br><br>
+    Wierzymy, że rozwój to nie tylko technika, ale także podejście, estetyka i społeczność. Eternal Cut to coś więcej niż studio – to przestrzeń twórcza i edukacyjna.
+  </p>
+</section>
+
+
+<footer>
+  Eternal Cut & Rec · Szkolenia Barber · Poznań · 2025
+</footer>
+
+</body>
+</html>

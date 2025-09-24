@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harmonogram szkoleń Eternal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;700&family=Epilogue:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Epilogue', sans-serif;
+      background: url('6-IMG_0941.jpeg') center/cover no-repeat;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+
+    .schedule-wrapper {
+      position: relative;
+      z-index: 1;
+      background: rgba(20, 0, 28, 0.5);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 3rem 2rem;
+      margin: 2rem auto;
+      max-width: 640px;
+      border-radius: 1.5rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    h1 {
+      font-family: 'Clash Display', sans-serif;
+      font-size: 2.5rem;
+      color: #e0aaff;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .module {
+      background: #2e003e;
+      color: #ffffff;
+      padding: 1rem 1.5rem;
+      margin-bottom: 1rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      text-align: center;
+      width: 100%;
+    }
+
+    a.back-button {
+      margin-top: 2rem;
+      display: inline-block;
+      background: #e0aaff;
+      color: #2e003e;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    a.back-button:hover {
+      background: #ffb3ec;
+    }
+
+    @media(max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .module {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="schedule-wrapper">
+    <h1>Harmonogram szkoleń</h1>
+
+    <div class="module">
+      Niedziela, 6 października – Moduł 1: Techniki dnia codziennego
+    </div>
+    <div class="module">
+      Niedziela, 13 października – Moduł 2: Formy klasyczne
+    </div>
+    <div class="module">
+      Niedziela, 20 października – Moduł 3: Nowoczesne strzyżenia
+    </div>
+    <div class="module">
+      Niedziela, 27 października – Moduł 4: Broda i golenie
+    </div>
+
+    <a class="back-button" href="index_eternal_inspired.html">← Powrót na stronę główną</a>
+  </div>
+
+</body>
+</html>

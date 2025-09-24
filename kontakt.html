@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt – Eternal Cut</title>
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;700&family=Epilogue:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Epilogue', sans-serif;
+      background: #14001c;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      background: url('6-IMG_0941.jpeg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+    }
+
+    .hero-content h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .contact-info a {
+      display: block;
+      font-size: 1.1rem;
+      color: #e0aaff;
+      text-decoration: none;
+      margin-bottom: 1rem;
+      transition: color 0.3s;
+    }
+
+    .contact-info a:hover {
+      color: #ffffff;
+    }
+
+    .back-button {
+      margin-top: 2.5rem;
+      display: inline-block;
+      background: #e0aaff;
+      color: #2e003e;
+      padding: 1rem 2rem;
+      border-radius: 0.75rem;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .back-button:hover {
+      background: #ffb3ec;
+    }
+
+    @media(max-width: 768px) {
+      .hero-content h1 { font-size: 2rem; }
+      .hero-content p, .contact-info a { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Skontaktuj się z nami</h1>
+      <p class="contact-info">
+        <a href="https://www.instagram.com/eternal8cut" target="_blank">@eternal8cut</a>
+        <a href="mailto:szymonkochanski99@gmail.com">szymonkochanski99@gmail.com</a>
+        <a href="tel:+48503676838">+48 503 676 838</a>
+      </p>
+      <a href="index_eternal_inspired.html" class="back-button">← Powrót na stronę główną</a>
+    </div>
+  </section>
+
+</body>
+</html>
