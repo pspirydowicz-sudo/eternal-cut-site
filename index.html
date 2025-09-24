@@ -18,28 +18,63 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
+      padding: 0.5rem 1.5rem; /* MNIEJSZY margines */
       z-index: 1000;
+      flex-wrap: wrap;
     }
 
-    header img {
-      height: 40px;
+    .logo img {
+      height: 80px;
+      transition: height 0.3s ease;
     }
 
-    nav a {
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-links a {
       color: #e0aaff;
       text-decoration: none;
-      margin-left: 2rem;
+      margin: 0.5rem 1rem;
       font-weight: bold;
       transition: 0.3s;
+      font-size: 1rem;
     }
 
-    nav a:hover {
+    .nav-links a:hover {
       color: #ffffff;
     }
 
+    .hamburger {
+      display: none;
+      font-size: 2rem;
+      color: #e0aaff;
+      cursor: pointer;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+    }
+
+    .mobile-nav.show {
+      display: flex;
+    }
+
+    .mobile-nav a {
+      color: #e0aaff;
+      text-decoration: none;
+      margin: 1rem 0;
+      font-weight: bold;
+    }
+
     .hero {
-      height: 100vh;
+      min-height: 100vh;
       background: url('6-IMG_0941.jpeg') center/cover no-repeat;
       display: flex;
       align-items: center;
@@ -60,6 +95,8 @@
       position: relative;
       z-index: 1;
       color: #fff;
+      max-width: 700px;
+      width: 100%;
     }
 
     .hero-content h1 {
@@ -73,19 +110,33 @@
       color: #e0d3ef;
     }
 
+    .hero-content .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
     .hero-content .buttons a {
       background: #e0aaff;
       color: #2e003e;
       padding: 0.9rem 2rem;
       border-radius: 0.5rem;
       text-decoration: none;
-      margin: 0 0.5rem;
       font-weight: bold;
       transition: 0.3s;
+      font-size: 1rem;
     }
 
     .hero-content .buttons a:hover {
       background: #ffb3ec;
+    }
+
+    .hero-logo {
+      width: 100%;
+      max-width: 320px;
+      margin-bottom: 20px;
+      transition: max-width 0.3s ease;
     }
 
     section {
@@ -93,39 +144,28 @@
       text-align: center;
     }
 
-    form {
-      max-width: 500px;
+    section#o-nas {
+      position: relative;
+      background: url('4-DSC00455.png') center/cover no-repeat;
+      z-index: 1;
+      background-attachment: fixed;
+    }
+
+    section#o-nas::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(to bottom, rgba(20,0,28,0.95), rgba(20,0,28,0.7), rgba(20,0,28,0.95));
+      z-index: -1;
+    }
+
+    #o-nas p {
+      max-width: 600px;
       margin: 0 auto;
-      text-align: left;
-    }
-
-    form label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-weight: bold;
-    }
-
-    form input, form textarea {
-      width: 100%;
-      padding: 0.75rem;
-      margin-bottom: 1rem;
-      border: none;
-      border-radius: 0.5rem;
-    }
-
-    form button {
-      background: #e0aaff;
-      color: #2e003e;
-      padding: 1rem 2rem;
-      border: none;
-      border-radius: 0.75rem;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    form button:hover {
-      background: #ffb3ec;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #e0d3ef;
     }
 
     footer {
@@ -136,65 +176,84 @@
       font-size: 0.9rem;
     }
 
-    @media(max-width: 768px) {
-      header { flex-direction: column; align-items: flex-start; }
-      nav a { margin: 1rem 0; display: block; }
-      .hero-content h1 { font-size: 2rem; }
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .logo img {
+        height: 60px;
+      }
+
+      .hero-logo {
+        max-width: 200px;
+        margin-bottom: 1rem;
+      }
+
+      .hero-content h1 {
+        font-size: 2rem;
+        margin-top: 0.5rem;
+      }
+
+      .hero-content {
+        padding-top: 1rem;
+      }
+
+      .hero {
+        padding-top: 4rem; /* mniej miejsca u góry */
+      }
     }
   </style>
+  <script>
+    function toggleMenu() {
+      document.getElementById("mobileMenu").classList.toggle("show");
+    }
+  </script>
 </head>
 <body>
 
-<header style="position: fixed; width: 100%; top: 0; left: 0; background: rgba(20, 0, 28, 0.9); display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 2rem; z-index: 1000; height: 100px;">
-  <div style="height: 100%; display: flex; align-items: center;">
-    <img src="POSTER 2 CUT v.png" alt="Eternal Logo" style="height: 120px; object-fit: contain;">
+<header>
+  <div class="logo">
+    <img src="POSTER 2 CUT v.png" alt="Eternal Logo">
   </div>
-  <nav style="display: flex; align-items: center;">
-    <a href="#start" style="color: #e0aaff; text-decoration: none; margin-left: 2rem; font-weight: bold;">Start</a>
-    <a href="#o-nas" style="color: #e0aaff; text-decoration: none; margin-left: 2rem; font-weight: bold;">O szkoleniu</a>
-    <a href="harmonogram.html" style="color: #e0aaff; text-decoration: none; margin-left: 2rem; font-weight: bold;">Harmonogram</a>
-    <a href="kontakt.html" style="color: #e0aaff; text-decoration: none; margin-left: 2rem; font-weight: bold;">Kontakt</a>
+
+  <nav class="nav-links">
+    <a href="#start">Start</a>
+    <a href="#o-nas">O szkoleniu</a>
+    <a href="harmonogram.html">Harmonogram</a>
+    <a href="kontakt.html">Kontakt</a>
+  </nav>
+
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+  <nav class="mobile-nav" id="mobileMenu">
+    <a href="#start" onclick="toggleMenu()">Start</a>
+    <a href="#o-nas" onclick="toggleMenu()">O szkoleniu</a>
+    <a href="harmonogram.html" onclick="toggleMenu()">Harmonogram</a>
+    <a href="kontakt.html" onclick="toggleMenu()">Kontakt</a>
   </nav>
 </header>
 
 <section class="hero" id="start">
   <div class="hero-content">
-    <img src="poster_ai_brightened.png" alt="Logo Eternal Cut" style="width: 320px; margin-bottom: 20px;">
+    <img src="poster_ai_brightened.png" alt="Logo Eternal Cut" class="hero-logo">
     <h1>Szkolenia Eternal</h1>
     <p>Rozwijaj się jako barber z najlepszymi – w centrum Poznania</p>
     <div class="buttons">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSc9FrXhq5frUC2waSCEfkL6166--FTJcYEXy0mGR9Ay2DTuVQ/viewform" class="cta-button" target="_blank" rel="noopener noreferrer">
-        Zapisz się
-      </a>
-      <a href="harmonogram.html" class="cta-button">
-        Harmonogram
-      </a>
-      <a href="kontakt.html" class="cta-button">
-        Kontakt
-      </a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSc9FrXhq5frUC2waSCEfkL6166--FTJcYEXy0mGR9Ay2DTuVQ/viewform" target="_blank" rel="noopener noreferrer">Zapisz się</a>
+      <a href="harmonogram.html">Harmonogram</a>
+      <a href="kontakt.html">Kontakt</a>
     </div>
   </div>
 </section>
 
-<section id="o-nas" style="
-  position: relative;
-  background: url('4-DSC00455.png') center/cover no-repeat;
-  padding: 6rem 2rem 8rem;
-  text-align: center;
-  z-index: 1;
-  background-attachment: fixed;
-">
-
-  <div style="
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: linear-gradient(to bottom, rgba(20,0,28,0.95), rgba(20,0,28,0.7), rgba(20,0,28,0.95));
-    z-index: -1;
-  "></div>
-
+<section id="o-nas">
   <h2 style="margin-bottom: 2rem;">O szkoleniach i Eternal Cut</h2>
-  <p style="max-width: 600px; margin: 0 auto; font-size: 1.1rem; line-height: 1.8; color: #e0d3ef;">
+  <p>
     Szkolenia Eternal to połączenie pasji, profesjonalizmu i atmosfery współpracy. Działamy w centrum Poznania, inspirując kolejne pokolenia barberów. 
     <br><br>
     Każdy uczestnik naszych szkoleń otrzymuje indywidualne podejście, praktyczne umiejętności oraz dostęp do wiedzy prowadzonej przez doświadczonych instruktorów. 
@@ -202,7 +261,6 @@
     Wierzymy, że rozwój to nie tylko technika, ale także podejście, estetyka i społeczność. Eternal Cut to coś więcej niż studio – to przestrzeń twórcza i edukacyjna.
   </p>
 </section>
-
 
 <footer>
   Eternal Cut & Rec · Szkolenia Barber · Poznań · 2025
