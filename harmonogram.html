@@ -14,38 +14,28 @@
 
     body {
       font-family: 'Epilogue', sans-serif;
-      background: url('6-IMG_0941.jpeg') center/cover no-repeat;
       color: white;
-      min-height: 100vh;
-      position: relative;
-    }
-
-    body::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: 0;
+      background: #14001c;
     }
 
     header {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background: #2a003f;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.4rem 1rem;
-  min-height: 50px;
-  z-index: 1000;
-  flex-wrap: wrap;
-}
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: #2a003f;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.4rem 1rem;
+      min-height: 50px;
+      z-index: 1000;
+      flex-wrap: wrap;
+    }
 
     .logo img {
-  max-height: 40px;
-}
+      max-height: 40px;
+    }
 
     .nav-links {
       display: flex;
@@ -94,22 +84,38 @@
       font-size: 1rem;
     }
 
-    .header-shadow {
-      height: 30px;
-      width: 100%;
-      background: rgba(20, 0, 28, 0.9);
-      z-index: 999;
+    .hero {
+      min-height: 100vh;
+      background: url('6-IMG_0941.jpeg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 7rem 2rem 2rem;
       position: relative;
     }
 
-    .schedule-wrapper {
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+
+    .hero-content {
       position: relative;
       z-index: 1;
+      max-width: 700px;
+      width: 100%;
+    }
+
+    .schedule-wrapper {
       background: rgba(20, 0, 28, 0.5);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       padding: 3rem 2rem;
-      margin: 14rem auto 2rem;
+      margin: 0 auto;
       max-width: 640px;
       border-radius: 1.5rem;
       text-align: center;
@@ -155,14 +161,6 @@
     }
 
     @media(max-width: 768px) {
-      h1 {
-        font-size: 2rem;
-      }
-
-      .module {
-        font-size: 0.95rem;
-      }
-
       .nav-links {
         display: none;
       }
@@ -172,15 +170,15 @@
       }
 
       .logo img {
-        height: 80px;
+        height: 40px;
       }
 
-      .header-shadow {
-        height: 60px;
+      h1 {
+        font-size: 2rem;
       }
 
-      .schedule-wrapper {
-        margin-top: 13rem;
+      .module {
+        font-size: 0.95rem;
       }
     }
   </style>
@@ -214,26 +212,28 @@
   </nav>
 </header>
 
-<div class="header-shadow"></div>
+<section class="hero">
+  <div class="hero-content">
+    <div class="schedule-wrapper">
+      <h1>Harmonogram szkoleń</h1>
 
-<div class="schedule-wrapper">
-  <h1>Harmonogram szkoleń</h1>
+      <div class="module">
+        Niedziela, 6 października – Moduł 1: Techniki dnia codziennego
+      </div>
+      <div class="module">
+        Niedziela, 13 października – Moduł 2: Formy klasyczne
+      </div>
+      <div class="module">
+        Niedziela, 20 października – Moduł 3: Nowoczesne strzyżenia
+      </div>
+      <div class="module">
+        Niedziela, 27 października – Moduł 4: Broda i golenie
+      </div>
 
-  <div class="module">
-    Niedziela, 6 października – Moduł 1: Techniki dnia codziennego
+      <a class="back-button" href="index_eternal_inspired.html">← Powrót na stronę główną</a>
+    </div>
   </div>
-  <div class="module">
-    Niedziela, 13 października – Moduł 2: Formy klasyczne
-  </div>
-  <div class="module">
-    Niedziela, 20 października – Moduł 3: Nowoczesne strzyżenia
-  </div>
-  <div class="module">
-    Niedziela, 27 października – Moduł 4: Broda i golenie
-  </div>
-
-  <a class="back-button" href="index.html">← Powrót na stronę główną</a>
-</div>
+</section>
 
 </body>
 </html>
